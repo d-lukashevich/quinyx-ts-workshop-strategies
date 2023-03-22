@@ -96,14 +96,6 @@ export const toCamelCase = (str) => {
   return s.slice(0, 1).toLowerCase() + s.slice(1);
 };
 
-export const fromCamelCase = (str, separator = '_') => {
-  const _separator = typeof separator === 'number' ? '_'.repeat(separator) : separator;
-  return str
-    .replace(/([a-z\d])([A-Z])/g, '$1' + _separator + '$2')
-    .replace(/([A-Z]+)([A-Z][a-z\d]+)/g, '$1' + _separator + '$2')
-    .toLowerCase();
-};
-
 const getType = (element) => {
   switch (true) {
     case isValidElement(element):
